@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>880E7C2F-D8DA-4614-AFFF-6C94170F1169</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Relaced</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>45C53200-FA1D-4E3E-9537-34BFF6B04D13</key>
+		<string>https://github.com/zperrault/Relaced.git</string>
+		<key>50919AD79AA969DA849F68A8A544749627B306C4</key>
+		<string>https://github.com/zperrault/Relaced.git</string>
+		<key>C049D67E5AE7E1578E50A9CE60CF3CD20E581D7D</key>
+		<string>https://bitbucket.org/bmadueme/relaced.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Relaced.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>45C53200-FA1D-4E3E-9537-34BFF6B04D13</key>
+		<string>../../Relaced copy 2</string>
+		<key>50919AD79AA969DA849F68A8A544749627B306C4</key>
+		<string>../../Relaced%20copy%202</string>
+		<key>C049D67E5AE7E1578E50A9CE60CF3CD20E581D7D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/bmadueme/relaced.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C049D67E5AE7E1578E50A9CE60CF3CD20E581D7D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>45C53200-FA1D-4E3E-9537-34BFF6B04D13</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Relaced copy 2</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C049D67E5AE7E1578E50A9CE60CF3CD20E581D7D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Relaced-DevMaster</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>50919AD79AA969DA849F68A8A544749627B306C4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Relaced%20copy%202</string>
+		</dict>
+	</array>
+</dict>
+</plist>

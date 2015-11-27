@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Relaced.RMParallax.setupRMParallax (Relaced.RMParallax)() -&gt; ():RMParallax.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.viewWidth">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PAPPhotoDetailsHeaderView loadAllShoeImages]:PAPPhotoDetailsHeaderView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((PFImageView *)[allImageViews objectAtIndex:0]).image.size">
+            </PersistentString>
+            <PersistentString
+               value = "otherImages">
+            </PersistentString>
+            <PersistentString
+               value = "mainImageView.image.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__40-[RLMyAccountViewController viewDidLoad]_block_invoke:RLMyAccountViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[PFUser currentUser]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PAPSplashViewController loadView]:PAPSplashViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[RLUtils settingsButtonAction:]:RLUtils.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[UIApplication sharedApplication]">
+            </PersistentString>
+            <PersistentString
+               value = "sharedWindow.rootViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -139,7 +139,7 @@ static const CGFloat kPAPCellInsetWidth = 0.0f;
         // Use the new iOS 6 refresh control.
         UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
         self.refreshControl = refreshControl;
-        self.refreshControl.tintColor = [RLUtils relacedRed];
+        self.refreshControl.tintColor = [RLUtils nowNearTeal];
         [self.refreshControl addTarget:self action:@selector(refreshControlValueChanged:) forControlEvents:UIControlEventValueChanged];
         self.pullToRefreshEnabled = NO;
     }
@@ -476,7 +476,7 @@ static const CGFloat kPAPCellInsetWidth = 0.0f;
             }
             
             [activityItems addObject:[UIImage imageWithData:data]];
-            [activityItems addObject:[NSURL URLWithString:[NSString stringWithFormat:@"https://relacedapp.com/#pic/%@", self.photo.objectId]]];
+            [activityItems addObject:[NSURL URLWithString:[NSString stringWithFormat:@"https://NowNearapp.com/#pic/%@", self.photo.objectId]]];
             
             UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
             [self.navigationController presentViewController:activityViewController animated:YES completion:nil];

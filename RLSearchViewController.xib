@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RLSearchViewController">
@@ -37,29 +37,18 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Sort">
+                        <color key="titleColor" red="0.29803921568627451" green="0.71764705882352942" blue="0.70588235294117652" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="sortButtonPressed:" destination="-1" eventType="touchUpInside" id="CS8-w8-VZ0"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="NsH-mn-OU6">
-                    <rect key="frame" x="90" y="13" width="141" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                    <segments>
-                        <segment title="Listings"/>
-                        <segment title="Users"/>
-                    </segments>
-                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <action selector="searchScopeChanged:" destination="-1" eventType="valueChanged" id="Cwd-7m-aC1"/>
-                    </connections>
-                </segmentedControl>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9nb-tK-8fG">
                     <rect key="frame" x="83" y="45" width="155" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" red="0.97647058819999999" green="0.76078431369999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.29803921568627451" green="0.71764705882352942" blue="0.70588235294117652" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="br8-GU-DUP">
@@ -79,9 +68,26 @@
                         <action selector="filtersButtonPressed:" destination="-1" eventType="touchUpInside" id="j0E-wb-3kO"/>
                     </connections>
                 </button>
+                <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="NsH-mn-OU6">
+                    <rect key="frame" x="68" y="11" width="185" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="Items/Events"/>
+                        <segment title="Users"/>
+                    </segments>
+                    <color key="tintColor" red="0.29803921570000003" green="0.71764705880000002" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="searchScopeChanged:" destination="-1" eventType="valueChanged" id="Cwd-7m-aC1"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="140" y="154"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

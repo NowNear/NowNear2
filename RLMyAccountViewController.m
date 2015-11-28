@@ -1,6 +1,6 @@
 //
 //  RLMyAccountViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 1/26/15.
 //
@@ -23,7 +23,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet FBShimmeringView *shimmeringView;
-@property (weak, nonatomic) IBOutlet UICountingLabel *relacedBalance;
+@property (weak, nonatomic) IBOutlet UICountingLabel *NowNearBalance;
 @property (weak, nonatomic) IBOutlet BButton *refillButton;
 @property (weak, nonatomic) IBOutlet BButton *withdrawButton;
 
@@ -32,7 +32,7 @@
 @implementation RLMyAccountViewController
 
 @synthesize shimmeringView;
-@synthesize relacedBalance;
+@synthesize NowNearBalance;
 @synthesize refillButton;
 @synthesize withdrawButton;
 
@@ -50,7 +50,7 @@
                 if (objects.count) {  //Don't do anything if no results were returned, though we should technically never be in this case
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         usersBalance = [[[objects objectAtIndex:0] objectForKey:kRLBalanceKey] floatValue];
-                        [self animateRelacedBalanceCounter];
+                        [self animateNowNearBalanceCounter];
                     });
                 }
             }
@@ -76,7 +76,7 @@
     [withdrawButton setType:BButtonTypeDanger];
     [withdrawButton addAwesomeIcon:FABank beforeTitle:NO];
     
-    shimmeringView.contentView = relacedBalance;
+    shimmeringView.contentView = NowNearBalance;
     
     PFQuery * usersCreditsQuery = [PFQuery queryWithClassName:kRLCreditsClass];
     [usersCreditsQuery whereKey:kRLUserKey equalTo:[PFUser currentUser]];
@@ -101,7 +101,7 @@
                     }
                     else {
                         usersBalance = 0;
-                        [self animateRelacedBalanceCounter];
+                        [self animateNowNearBalanceCounter];
                     }
                 }];
             }
@@ -109,7 +109,7 @@
                 //Needed to delay this code here for shimmering to stop correctly
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     usersBalance = [[[result objectAtIndex:0] objectForKey:kRLBalanceKey] floatValue];
-                    [self animateRelacedBalanceCounter];
+                    [self animateNowNearBalanceCounter];
                 });
             }
         }
@@ -118,17 +118,17 @@
     }];
 }
 
-- (void)animateRelacedBalanceCounter
+- (void)animateNowNearBalanceCounter
 {
     shimmeringView.shimmering = NO;
-    [relacedBalance setTextColor:[RLUtils relacedRed]];
-    [relacedBalance setFormat:@"$%.2f"];
-    [relacedBalance setAnimationDuration:1.5];
+    [NowNearBalance setTextColor:[RLUtils nowNearTeal]];
+    [NowNearBalance setFormat:@"$%.2f"];
+    [NowNearBalance setAnimationDuration:1.5];
     
     if (usersBalanceInitialized) {
-        [relacedBalance countFromCurrentValueTo:usersBalance];
+        [NowNearBalance countFromCurrentValueTo:usersBalance];
     } else {
-        [relacedBalance countFromZeroTo:usersBalance];
+        [NowNearBalance countFromZeroTo:usersBalance];
     }
     
     refillButton.hidden = NO;

@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.developer.in-app-payments</key>
 	<array>
-		<string>merchant.com.relaced.relacedapp</string>
+		<string>merchant.com.NowNear.NowNearapp</string>
 	</array>
 </dict>
 </plist>

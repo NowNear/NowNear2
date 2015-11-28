@@ -1,6 +1,6 @@
 //
 //  RLApplePayOrCreditCardViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 2/8/15.
 //
@@ -37,7 +37,7 @@
     [payWithApplePay addAwesomeIcon:FAApple beforeTitle:NO];
     
     //[payWithCreditCard setStyle:BButtonStyleBootstrapV3];
-    [payWithCreditCard setColor:[RLUtils relacedRed]];
+    [payWithCreditCard setColor:[RLUtils nowNearTeal]];
     [payWithCreditCard addAwesomeIcon:FACreditCard beforeTitle:NO];
     
     applePayShimmeringView.contentView = payWithApplePay;

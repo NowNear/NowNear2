@@ -84,7 +84,7 @@
         // Use the new iOS 6 refresh control.
         UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
         self.refreshControl = refreshControl;
-        self.refreshControl.tintColor = [RLUtils relacedRed];
+        self.refreshControl.tintColor = [RLUtils nowNearTeal];
         [self.refreshControl addTarget:self action:@selector(refreshControlValueChanged:) forControlEvents:UIControlEventValueChanged];
         self.pullToRefreshEnabled = NO;
     }

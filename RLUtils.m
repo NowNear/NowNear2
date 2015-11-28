@@ -1,6 +1,6 @@
 //
 //  RLUtils.m
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 10/19/14.
 //
@@ -10,9 +10,9 @@
 #import "PAPSettingsActionSheetDelegate.h"
 #import "PAPSettingsButtonItem.h"
 
-NSString * const kRLMerchantID = @"merchant.com.relaced.relacedapp";
+NSString * const kRLMerchantID = @"merchant.com.NowNear.NowNearapp";
 
-NSString * const kRLBusinessName = @"Sold";
+NSString * const kRLBusinessName = @"NowNear";
 CGFloat const kRLShippingRate = 15.0f;
 CGFloat const kRLMinimumPaidDollars = 0.5f; // Stripe's minimum is $0.50
 NSString * const kRLPaymentTypeCreditCard = @"credit_card";
@@ -67,13 +67,13 @@ NSString * const kRLShippingAddressParameterKey = @"shippingAddress";
 NSString * const kRLCalculatedCreditsDeductedParameterKey = @"calculatedCreditsDeducted";
 
 NSString * const kRLTransactionSuccessfulMsgTitle = @"Purchase Successful!";
-NSString * const kRLTransactionSuccessfulMsg = @"Your transaction was successfully processed, and your Relaced balance was updated.";
+NSString * const kRLTransactionSuccessfulMsg = @"Your transaction was successfully processed, and your NowNear balance was updated.";
 
 NSString * const kRLNetworkErrorMsgTitle = @"Network Problem!";
-NSString * const kRLNetworkErrorMsg =  @"Relaced seems to be having some trouble accessing the Internet. Check your network settings, or try this operation again at a later time.";
+NSString * const kRLNetworkErrorMsg =  @"NowNear seems to be having some trouble accessing the Internet. Check your network settings, or try this operation again at a later time.";
 
 NSString * const kRLApplePayUnsupportedMsgTitle = @"Apple Pay Unsupported";
-NSString * const kRLApplePayUnsupportedMsg = @"Relaced had a problem processing your transaction with Apple Pay, and your Apple Pay account was not charged.  Let's try using a credit card instead.";
+NSString * const kRLApplePayUnsupportedMsg = @"NowNear had a problem processing your transaction with Apple Pay, and your Apple Pay account was not charged.  Let's try using a credit card instead.";
 
 NSString * const kRLCardPaymentErrorOccurredMsgTitle = @"Payment Error!";
 NSString * const kRLCardPaymentErrorOccurredMsg = @"An error occurred processing your transaction - please double-check your payment information.  If the problem persists, verify your device has Internet connectivity.";
@@ -83,9 +83,9 @@ static PAPSettingsActionSheetDelegate * settingsActionSheetDelegate = nil;
 
 @implementation RLUtils
 
-+(UIColor *)relacedRed
++(UIColor *)nowNearTeal
 {
-    return [UIColor colorWithRed:249.0f/255.0f green:194.0f/255.0f blue:82.0f/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:90.0f/255.0f green:195.0f/255.0f blue:194.0f/255.0f alpha:1.0f];
 }
 
 + (NSArray *)sizeFiltersList

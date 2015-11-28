@@ -1,6 +1,6 @@
 //
 //  FollowViewController.h
-//  Relaced
+//  NowNear
 //
 //  Created by A. K. M. Saleh Sultan on 11/30/13.
 //

@@ -1,6 +1,6 @@
 //
 //  RLPaymentViewController.h
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 1/31/15.
 //

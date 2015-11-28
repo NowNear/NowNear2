@@ -1,6 +1,6 @@
 //
 //  PAPWelcomeViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/26/13.
 //
@@ -67,12 +67,12 @@
     }
     else if (sender.state == UIGestureRecognizerStateEnded) {
         if (sender.view == termsLabel) {
-            termsLabel.textColor = [RLUtils relacedRed];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://getrelaced.com/legal/terms.html"]];
+            termsLabel.textColor = [RLUtils nowNearTeal];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://getNowNear.com/legal/terms.html"]];
         }
         else if (sender.view == privacyPolicyLabel) {
-            privacyPolicyLabel.textColor = [RLUtils relacedRed];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://getrelaced.com/legal/policy.html"]];
+            privacyPolicyLabel.textColor = [RLUtils nowNearTeal];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://getNowNear.com/legal/policy.html"]];
         }
     }
 }

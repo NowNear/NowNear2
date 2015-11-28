@@ -1,6 +1,6 @@
 //
 //  RLSearchViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 11/9/14.
 //
@@ -216,10 +216,10 @@
         
         if ([self filtersAreOn]) {
             [filtersButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            filtersButton.backgroundColor = [RLUtils relacedRed];
+            filtersButton.backgroundColor = [RLUtils nowNearTeal];
         }
         else {
-            [filtersButton setTitleColor:[RLUtils relacedRed] forState:UIControlStateNormal];
+            [filtersButton setTitleColor:[RLUtils nowNearTeal] forState:UIControlStateNormal];
             filtersButton.backgroundColor = [UIColor clearColor];
         }
         

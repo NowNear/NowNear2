@@ -1,6 +1,6 @@
 //
 //  PAPLoadingCell.m
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/12/13.
 //

@@ -1,6 +1,6 @@
 //
 //  RLSaleViewController.h
-//  Relaced
+//  NowNear
 //
 //  Created by Mybrana on 14/04/15.
 //

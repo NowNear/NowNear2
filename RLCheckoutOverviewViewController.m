@@ -1,6 +1,6 @@
 //
 //  RLCheckoutOverviewViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Mybrana on 08/04/15.
 //
@@ -177,7 +177,7 @@
 - (IBAction)minimumChargeDisclosureButtonPressed:(id)sender
 {
     [[[UIAlertView alloc] initWithTitle:@"Minimum charge"
-                                message:@"This is the minimum amount allowed as a payment by Relaced when buying items"
+                                message:@"This is the minimum amount allowed as a payment by NowNear when buying items"
                                delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
@@ -186,7 +186,7 @@
 - (IBAction)serviceFeeDisclosureButtonPressed:(id)sender
 {
     [[[UIAlertView alloc] initWithTitle:@"Service Fee"
-                                message:@"The price includes the fee charged by Relaced"
+                                message:@"The price includes the fee charged by NowNear"
                                delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];

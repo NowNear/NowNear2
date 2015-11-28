@@ -1,6 +1,6 @@
 //
 //  PAPMessagesViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/11/13.
 //
@@ -391,7 +391,7 @@
 - (IBAction)serviceFeeDisclosureButtonPressed:(id)sender
 {
     [[[UIAlertView alloc] initWithTitle:@"Service Fee"
-                                message:@"The price includes the fee charged by Relaced"
+                                message:@"The price includes the fee charged by NowNear"
                                delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];

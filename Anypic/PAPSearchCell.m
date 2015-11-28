@@ -1,6 +1,6 @@
 //
 //  PAPSearchCell.m
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/5/13.
 //
@@ -53,7 +53,7 @@
             rightSubtitleLabel.text = [NSString stringWithFormat:@"$%@ (NowNear)", [result objectForKey:kPAPPhotoPriceKey]];
             [rightSubtitleLabel setFont:[UIFont boldSystemFontOfSize:14]];
             rightSubtitleLabel.textColor = [UIColor whiteColor];
-            rightSubtitleLabel.backgroundColor = [RLUtils relacedRed];
+            rightSubtitleLabel.backgroundColor = [RLUtils nowNearTeal];
             [rightSubtitleLabel sizeToFit];
         } else {
             rightSubtitleLabel.text = [NSString stringWithFormat:@"$%@", [result objectForKey:kPAPPhotoPriceKey]];

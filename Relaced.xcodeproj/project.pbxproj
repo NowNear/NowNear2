@@ -1748,7 +1748,7 @@
 				LastUpgradeCheck = 0630;
 				TargetAttributes = {
 					09ABC06C13A1D52D009C3FCF = {
-						DevelopmentTeam = 75793JNSY3;
+						DevelopmentTeam = 229R68B874;
 						SystemCapabilities = {
 							com.apple.OMC = {
 								enabled = 1;
@@ -2358,7 +2358,7 @@
 					"\"UIKit\"",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sold.iphoneapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nownear.iphoneapp;
 				PRODUCT_NAME = SOLD;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2469,7 +2469,7 @@
 					"\"UIKit\"",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sold.iphoneapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nownear.iphoneapp;
 				PRODUCT_NAME = SOLD;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "79922cc9-0a11-4956-a771-d81571f0d557";
@@ -2612,7 +2612,7 @@
 					"\"UIKit\"",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sold.iphoneapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nownear.iphoneapp;
 				PRODUCT_NAME = SOLD;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "79922cc9-0a11-4956-a771-d81571f0d557";
@@ -2755,7 +2755,7 @@
 					"\"UIKit\"",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sold.iphoneapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nownear.iphoneapp;
 				PRODUCT_NAME = SOLD;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "79922cc9-0a11-4956-a771-d81571f0d557";

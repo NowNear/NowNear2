@@ -1,6 +1,6 @@
 //
 //  PAPConversationCell.h
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/11/13.
 //

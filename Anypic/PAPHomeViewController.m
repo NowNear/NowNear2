@@ -46,12 +46,12 @@
     followingActivitiesQuery.limit = 5;
     
 
-    // If the current user is a new user that means no followings then add 'Relaced' as a following by current user
+    // If the current user is a new user that means no followings then add 'NowNear' as a following by current user
     if ([followingActivitiesQuery countObjects] == 0) {
         PFUser *user = [PFQuery getUserObjectWithId:@"g5Wh0MigQj"]; // My campus table user Id
         [PAPUtility followUserEventually:user block:^(BOOL succeeded, NSError *error) {
             if (error) {
-                NSLog(@"Error adding Relaced");
+                NSLog(@"Error adding NowNear");
             }
         }];
     }

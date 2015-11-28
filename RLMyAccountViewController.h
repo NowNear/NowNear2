@@ -1,6 +1,6 @@
 //
 //  RLMyAccountViewController.h
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 1/26/15.
 //

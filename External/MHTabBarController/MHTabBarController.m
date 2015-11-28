@@ -336,7 +336,7 @@ static const NSInteger TagOffset = 1000;
 	
     [button setBackgroundColor:[UIColor whiteColor]];
     
-    [button setTitleColor:[RLUtils relacedRed] forState:UIControlStateNormal];
+    [button setTitleColor:[RLUtils nowNearTeal] forState:UIControlStateNormal];
 }
 
 - (void)deselectTabButton:(UIButton *)button

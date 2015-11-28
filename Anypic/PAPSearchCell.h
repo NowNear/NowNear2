@@ -1,6 +1,6 @@
 //
 //  PAPSearchCell.h
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/5/13.
 //

@@ -1,6 +1,6 @@
 //
 //  PAPLoginViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/27/13.
 //

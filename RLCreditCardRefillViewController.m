@@ -1,6 +1,6 @@
 //
 //  RLPaymentViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 1/31/15.
 //
@@ -34,10 +34,10 @@
 @property (weak, nonatomic) IBOutlet SpringLabel *cardEndingIn;
 @property (weak, nonatomic) IBOutlet SpringView *refillAmountContainer;
 @property (weak, nonatomic) IBOutlet SpringView *totalAmountContainer;
-@property (weak, nonatomic) IBOutlet SpringView *endingRelacedBalanceContainer;
+@property (weak, nonatomic) IBOutlet SpringView *endingNowNearBalanceContainer;
 @property (weak, nonatomic) IBOutlet UICountingLabel *refillAmount;
 @property (weak, nonatomic) IBOutlet UICountingLabel *totalAmount;
-@property (weak, nonatomic) IBOutlet UICountingLabel *endingRelacedBalance;
+@property (weak, nonatomic) IBOutlet UICountingLabel *endingNowNearBalance;
 @property (weak, nonatomic) IBOutlet BButton *looksGoodButton;
 @property (weak, nonatomic) IBOutlet BButton *takeMeBackButon;
 
@@ -57,10 +57,10 @@
 @synthesize cardEndingIn;
 @synthesize refillAmountContainer;
 @synthesize totalAmountContainer;
-@synthesize endingRelacedBalanceContainer;
+@synthesize endingNowNearBalanceContainer;
 @synthesize refillAmount;
 @synthesize totalAmount;
-@synthesize endingRelacedBalance;
+@synthesize endingNowNearBalance;
 @synthesize looksGoodButton;
 @synthesize takeMeBackButon;
 
@@ -166,27 +166,27 @@
         [totalAmount countFromZeroTo:[amountTextField.numberValue floatValue]];
     });
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(endingRelacedBalanceContainer.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(endingNowNearBalanceContainer.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         //We could have passed in this value from RLMyAccountViewController, but we perform the query again in the fringe case that
         //someone starts a refill from a device, completes a different refill on a second device, and attempts to complete the refill
         //on the first device.  In this case, the pre-refill balance value we would have gotten from RLMyAccountViewController would
-        //be wrong, and the ending Relaced balance value would consequently be incorrect as well.
+        //be wrong, and the ending NowNear balance value would consequently be incorrect as well.
         PFQuery * usersCreditsQuery = [PFQuery queryWithClassName:kRLCreditsClass];
         [usersCreditsQuery whereKey:kRLUserKey equalTo:[PFUser currentUser]];
         
         [usersCreditsQuery findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError *error) {
             if (error != nil) {
-                [endingRelacedBalance setText:@"Unknown"];
+                [endingNowNearBalance setText:@"Unknown"];
                 [RLUtils displayAlertWithTitle:kRLNetworkErrorMsgTitle message:kRLNetworkErrorMsg postDismissalBlock:nil];
             }
             else {
                 float preRefillBalance = [[[objects objectAtIndex:0] objectForKey:kRLBalanceKey] floatValue];
                 
                 float previousBalancePlusRefill = preRefillBalance + [amountTextField.numberValue floatValue];
-                [endingRelacedBalance setFormat:@"$%.2f"];
-                [endingRelacedBalance setAnimationDuration:counterAnimationDuration/2];
-                [endingRelacedBalance countFromZeroTo:previousBalancePlusRefill];
+                [endingNowNearBalance setFormat:@"$%.2f"];
+                [endingNowNearBalance setAnimationDuration:counterAnimationDuration/2];
+                [endingNowNearBalance countFromZeroTo:previousBalancePlusRefill];
             }
         }];
     });
@@ -258,7 +258,7 @@
                                     if (error) {
                                         [RLUtils displayAlertWithTitle:@"An Error Occurred" message:[[error userInfo] objectForKey:@"error"] postDismissalBlock:nil];
                                     } else {
-                                        [RLUtils displayAlertWithTitle:@"Wonderful!" message:@"The transaction was successful and your Relaced balance has increased!" postDismissalBlock:^{
+                                        [RLUtils displayAlertWithTitle:@"Wonderful!" message:@"The transaction was successful and your NowNear balance has increased!" postDismissalBlock:^{
                                             [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:1] animated:YES];
                                         }];
                                     }

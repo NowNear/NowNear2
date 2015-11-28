@@ -231,7 +231,7 @@
             self.fileUploadBackgroundTaskId = UIBackgroundTaskInvalid;
         }];
         
-        NSLog(@"Requested background expiration task with id %lu for Relaced photo upload", (unsigned long)self.fileUploadBackgroundTaskId);
+        NSLog(@"Requested background expiration task with id %lu for NowNear photo upload", (unsigned long)self.fileUploadBackgroundTaskId);
         [self.mainImageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Photo uploaded successfully");

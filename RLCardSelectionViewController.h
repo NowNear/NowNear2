@@ -1,6 +1,6 @@
 //
 //  RLCardSelectionViewController.h
-//  Relaced
+//  NowNear
 //
 //  Created by Mybrana on 09/04/15.
 //

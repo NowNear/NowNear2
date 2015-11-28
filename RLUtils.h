@@ -1,6 +1,6 @@
 //
 //  RLUtils.h
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 10/19/14.
 //
@@ -77,7 +77,7 @@ extern NSString * const kRLCardPaymentErrorOccurredMsg;
 
 @interface RLUtils : NSObject
 
-+ (UIColor *)relacedRed;
++ (UIColor *)nowNearTeal;
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 
 + (NSArray *)sizeFiltersList;

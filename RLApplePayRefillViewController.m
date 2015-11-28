@@ -1,6 +1,6 @@
 //
 //  RLApplePayRefillViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 2/8/15.
 //
@@ -47,7 +47,7 @@
     
     PKPaymentRequest * request = [Stripe paymentRequestWithMerchantIdentifier:kRLMerchantID];
     
-    NSString * purchaseLabel = [NSString stringWithFormat:@"Relaced Refill - $%.2f", [purchaseAmount floatValue]];
+    NSString * purchaseLabel = [NSString stringWithFormat:@"NowNear Refill - $%.2f", [purchaseAmount floatValue]];
     request.paymentSummaryItems = @[ [PKPaymentSummaryItem summaryItemWithLabel:purchaseLabel
                                                                          amount:purchaseAmount] ];
     request.merchantCapabilities = PKMerchantCapabilityEMV | PKMerchantCapability3DS;
@@ -108,7 +108,7 @@
             [RLUtils displayAlertWithTitle:@"An Error Occurred" message:[[cloudCodeError userInfo] objectForKey:@"error"] postDismissalBlock:nil];
         }
         else {
-            [RLUtils displayAlertWithTitle:@"Wonderful!" message:@"The Apple Pay transaction was successful and your Relaced balance has increased!" postDismissalBlock:^{
+            [RLUtils displayAlertWithTitle:@"Wonderful!" message:@"The Apple Pay transaction was successful and your NowNear balance has increased!" postDismissalBlock:^{
                 [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:1] animated:YES];
             }];
         }

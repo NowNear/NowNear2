@@ -1,6 +1,6 @@
 //
 //  PAPPhotoFooterView.m
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/23/13.
 //
@@ -182,7 +182,7 @@
     likeButton.layer.cornerRadius = 6; // this value vary as per your desire
     likeButton.clipsToBounds = YES;
     self.likeButton.layer.borderWidth = 2.0f;
-    self.likeButton.layer.borderColor = [RLUtils relacedRed].CGColor;
+    self.likeButton.layer.borderColor = [RLUtils nowNearTeal].CGColor;
     
     
     //priceLabel.frame = CGRectMake(52, contentSize.height + 8, 60, 20);

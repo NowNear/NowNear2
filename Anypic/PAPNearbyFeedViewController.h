@@ -1,6 +1,6 @@
 //
 //  PAPNearbyFeedViewController.h
-//  Relaced
+//  NowNear
 //
 //  Created by Qibo Fu on 8/20/13.
 //

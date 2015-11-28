@@ -314,7 +314,7 @@ NSString * const stripePublishableKey = @"pk_live_ahrjp5lBL5gTIhpQKJpdqWdr"; // 
     UINavigationController *exploreNavigationController = [[UINavigationController alloc] initWithRootViewController:searchViewController];
     UINavigationController *profileNavigationController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
     
-    [[UITabBar appearance] setSelectedImageTintColor:[RLUtils relacedRed]];
+    [[UITabBar appearance] setSelectedImageTintColor:[RLUtils nowNearTeal]];
 
     self.tabBarController.tabBar.barStyle = UIBarStyleBlack;
     
@@ -425,7 +425,7 @@ NSString * const stripePublishableKey = @"pk_live_ahrjp5lBL5gTIhpQKJpdqWdr"; // 
     }
     else {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-        [[UINavigationBar appearance] setBarTintColor:[RLUtils relacedRed]];
+        [[UINavigationBar appearance] setBarTintColor:[RLUtils nowNearTeal]];
         
     }
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -438,7 +438,7 @@ NSString * const stripePublishableKey = @"pk_live_ahrjp5lBL5gTIhpQKJpdqWdr"; // 
     [[UISearchBar appearance] setTintColor:[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0f]];
     
     UITabBarItem *tabBarItemAppearance = [UITabBarItem appearance];
-    [tabBarItemAppearance setTitleTextAttributes: @{ UITextAttributeTextColor:[RLUtils relacedRed] } forState:UIControlStateSelected];
+    [tabBarItemAppearance setTitleTextAttributes: @{ UITextAttributeTextColor:[RLUtils nowNearTeal] } forState:UIControlStateSelected];
     [tabBarItemAppearance setTitleTextAttributes: @{ UITextAttributeTextColor: [UIColor lightGrayColor] } forState:UIControlStateNormal];
 }
 
@@ -592,7 +592,7 @@ NSString * const stripePublishableKey = @"pk_live_ahrjp5lBL5gTIhpQKJpdqWdr"; // 
                 [user setObject:@YES forKey:kPAPUserAlreadyAutoFollowedFacebookFriendsKey];
                 NSError *error = nil;
                 
-                // find common Facebook friends already using Relaced
+                // find common Facebook friends already using NowNear
                 PFQuery *facebookFriendsQuery = [PFUser query];
                 [facebookFriendsQuery whereKey:kPAPUserFacebookIDKey containedIn:facebookIds];
                 

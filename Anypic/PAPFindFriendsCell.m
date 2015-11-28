@@ -224,7 +224,7 @@
         [self.followButton setTitleColor:[UIColor whiteColor]
                                 forState:UIControlStateSelected];
         
-        followButton.backgroundColor = [RLUtils relacedRed];
+        followButton.backgroundColor = [RLUtils nowNearTeal];
         followButton.layer.cornerRadius = 10; // this value vary as per your desire
         followButton.clipsToBounds = YES;
         

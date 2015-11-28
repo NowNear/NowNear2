@@ -1,6 +1,6 @@
 //
 //  RLSearchViewController.h
-//  Relaced
+//  NowNear
 //
 //  Created by Benjamin Madueme on 11/9/14.
 //

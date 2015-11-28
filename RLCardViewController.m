@@ -1,6 +1,6 @@
 //
 //  RLCardViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by Mybrana on 12/04/15.
 //

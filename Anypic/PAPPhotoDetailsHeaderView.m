@@ -450,7 +450,7 @@ static TTTTimeIntervalFormatter *timeFormatter;
 - (IBAction)buyerDisclosureButtonPressed:(id)sender
 {
     [[[UIAlertView alloc] initWithTitle:@"Minimum charge"
-                                message:@"This is the minimum amount allowed as a payment by Relaced when buying items"
+                                message:@"This is the minimum amount allowed as a payment by NowNear when buying items"
                                delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];

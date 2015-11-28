@@ -1,6 +1,6 @@
 //
 //  FollowViewController.m
-//  Relaced
+//  NowNear
 //
 //  Created by A. K. M. Saleh Sultan on 11/30/13.
 //
@@ -117,7 +117,7 @@
         }
         if (cell.tag == indexPath.row) {
             if (!error && number > 0) {
-                cell.followButton.backgroundColor = [RLUtils relacedRed];
+                cell.followButton.backgroundColor = [RLUtils nowNearTeal];
                 [cell.followButton setTitle:@"Following" forState:UIControlStateNormal];
                 [cell.followButton addTarget:self action:@selector(unfollowButtonAction:) forControlEvents:UIControlEventTouchUpInside];
             }
@@ -180,7 +180,7 @@
     FollowListTableCell *cell = (FollowListTableCell*)[followTable cellForRowAtIndexPath:indexPath];
 
     
-    cell.followButton.backgroundColor = [RLUtils relacedRed];
+    cell.followButton.backgroundColor = [RLUtils nowNearTeal];
     [cell.followButton setTitle:@"Following" forState:UIControlStateNormal];
     
     PFUser *user = [[followList objectAtIndex:[sender tag]-1000] objectForKey:@"user"];

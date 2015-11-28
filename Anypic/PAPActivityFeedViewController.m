@@ -89,7 +89,7 @@
         // Use the new iOS 6 refresh control.
         UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
         self.refreshControl = refreshControl;
-        self.refreshControl.tintColor = [RLUtils relacedRed];
+        self.refreshControl.tintColor = [RLUtils nowNearTeal];
         [self.refreshControl addTarget:self action:@selector(refreshControlValueChanged:) forControlEvents:UIControlEventValueChanged];
         self.pullToRefreshEnabled = NO;
     }
@@ -325,7 +325,7 @@
     } else if ([activityType isEqualToString:kPAPActivityTypeComment]) {
         return NSLocalizedString(@"commented on your listing", nil);
     } else if ([activityType isEqualToString:kPAPActivityTypeJoined]) {
-        return NSLocalizedString(@"joined Relaced", nil);
+        return NSLocalizedString(@"joined NowNear", nil);
     } else if ([activityType isEqualToString:kPAPActivityTypeMessage]) {
         return NSLocalizedString(@"sent you a message", nil);
     } else if ([activityType isEqualToString:kPAPActivityTypeSale]) {

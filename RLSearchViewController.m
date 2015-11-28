@@ -64,13 +64,6 @@
 
 - (void)initializeFilterDicts
 {
-    NSArray * sizeFilters = [RLUtils sizeFiltersList];
-    NSMutableArray * sizeFiltersIsSelected = [NSMutableArray new];
-    while ([sizeFiltersIsSelected count] < [sizeFilters count])
-        [sizeFiltersIsSelected addObject:@NO];
-    
-    sizeFilterToIsSelectedDict = [[M13MutableOrderedDictionary alloc] initWithObjects:sizeFiltersIsSelected pairedWithKeys:sizeFilters];
-    
     NSArray * priceFilters = [RLUtils priceFiltersList];
     NSMutableArray * priceFiltersIsSelected = [NSMutableArray new];
     while ([priceFiltersIsSelected count] < [priceFilters count])
@@ -78,19 +71,30 @@
     
     priceFilterToIsSelectedDict = [[M13MutableOrderedDictionary alloc] initWithObjects:priceFiltersIsSelected pairedWithKeys:priceFilters];
     
-    NSArray * brandFilters = [RLUtils brandFiltersList];
-    NSMutableArray * brandFiltersIsSelected = [NSMutableArray new];
-    while ([brandFiltersIsSelected count] < [brandFilters count])
-        [brandFiltersIsSelected addObject:@NO];
-    
-    brandFilterToIsSelectedDict = [[M13MutableOrderedDictionary alloc] initWithObjects:brandFiltersIsSelected pairedWithKeys:brandFilters];
-    
     NSArray * soldFilters = [RLUtils soldFiltersList];
     NSMutableArray * soldFiltersIsSelected = [NSMutableArray new];
     while ([soldFiltersIsSelected count] < [soldFilters count])
         [soldFiltersIsSelected addObject:@NO];
     
     soldFilterToIsSelectedDict = [[M13MutableOrderedDictionary alloc] initWithObjects:soldFiltersIsSelected pairedWithKeys:soldFilters];
+    
+    
+    NSArray * sizeFilters = [RLUtils sizeFiltersList];
+    NSMutableArray * sizeFiltersIsSelected = [NSMutableArray new];
+    while ([sizeFiltersIsSelected count] < [sizeFilters count])
+        [sizeFiltersIsSelected addObject:@NO];
+    
+    sizeFilterToIsSelectedDict = [[M13MutableOrderedDictionary alloc] initWithObjects:sizeFiltersIsSelected pairedWithKeys:sizeFilters];
+    
+
+    
+    NSArray * brandFilters = [RLUtils brandFiltersList];
+    NSMutableArray * brandFiltersIsSelected = [NSMutableArray new];
+    while ([brandFiltersIsSelected count] < [brandFilters count])
+        [brandFiltersIsSelected addObject:@NO];
+    
+    brandFilterToIsSelectedDict = [[M13MutableOrderedDictionary alloc] initWithObjects:brandFiltersIsSelected pairedWithKeys:brandFilters];
+
 }
 
 - (BOOL)shouldAutorotate
@@ -153,8 +157,10 @@
                                                             @"Oldest",
                                                             @"Price - Least Expensive",
                                                             @"Price - Most Expensive",
+                                                            /*
                                                             @"Size - Smallest First",
-                                                            @"Size - Largest First", nil];
+                                                            @"Size - Largest First", */
+                                                             nil];
         
         sortPicker = [[ActionSheetStringPicker alloc]
                                                 initWithTitle:@"Sort By"
@@ -484,80 +490,15 @@
 
 - (void)generateFiltersForWorkingQueryWithSearchKey:(NSString *) searchKey
 {
-    NSArray * sizeFilterToIsSelectedDictAllValues = [sizeFilterToIsSelectedDict allObjects];
+
     NSArray * priceFilterToIsSelectedDictAllValues = [priceFilterToIsSelectedDict allObjects];
     NSArray * soldFilterToIsSelectedDictAllValues = [soldFilterToIsSelectedDict allObjects];
     NSArray * brandFilterToIsSelectedDictAllValues = [brandFilterToIsSelectedDict allObjects];
-    
+    NSArray * sizeFilterToIsSelectedDictAllValues = [sizeFilterToIsSelectedDict allObjects];
     
     if ([self filtersAreOn]) {
         
-        //Configure the Size Filters
-        NSMutableArray * sizeOrSubQueries = [NSMutableArray new];
-        
-        if ([[sizeFilterToIsSelectedDictAllValues objectAtIndex:0] isEqual:@YES]) {
-            PFQuery * lessThan3Query = [PFQuery queryWithClassName:kRLPhotoClass];
-            [lessThan3Query whereKey:kRLSizeKey lessThan:@3];
-            [sizeOrSubQueries addObject:lessThan3Query];
-        }
-        
-        if ([[sizeFilterToIsSelectedDictAllValues objectAtIndex:[sizeFilterToIsSelectedDictAllValues count]-1] isEqual:@YES]) {
-            PFQuery * greaterThan17Query = [PFQuery queryWithClassName:kRLPhotoClass];
-            [greaterThan17Query whereKey:kRLSizeKey greaterThan:@17];
-            [sizeOrSubQueries addObject:greaterThan17Query];
-        }
-        
-        NSMutableArray * between3And17SelectedFilters = [NSMutableArray new];
-        for (NSUInteger i = 1; i < [sizeFilterToIsSelectedDictAllValues count] - 1; i++) {
-            if ([[sizeFilterToIsSelectedDictAllValues objectAtIndex:i] isEqual:@YES]) {
-                NSNumber * selectedSizeNumber = @([(NSString *)[sizeFilterToIsSelectedDict keyAtIndex:i] floatValue]);
-                [between3And17SelectedFilters addObject:selectedSizeNumber];
-            }
-        }
-        
-        if ([between3And17SelectedFilters count]) {
-            PFQuery * between3And17Query = [PFQuery queryWithClassName:kRLPhotoClass];
-            [between3And17Query whereKey:kRLSizeKey containedIn:between3And17SelectedFilters];
-            [sizeOrSubQueries addObject:between3And17Query];
-        }
-        
-        
-        //Configure the Sold Filters
-        //For some reason, the order in which these sub queries are added to soldOrSubQueries matters???
-        //Unless I'm missing something, this seems like a huge Parse bug
-        NSMutableArray * soldOrSubQueries = [NSMutableArray new];
-        
-        if ([[soldFilterToIsSelectedDictAllValues objectAtIndex:0] isEqual:@YES]) {
-            PFQuery * alreadySoldQuery = [PFQuery queryWithClassName:kRLPhotoClass];
-            [alreadySoldQuery whereKey:kRLIsSoldKey equalTo:@"1"];
-            [soldOrSubQueries addObject:alreadySoldQuery];
-        }
-        
-        if ([[soldFilterToIsSelectedDictAllValues objectAtIndex:1] isEqual:@YES]) {
-            PFQuery * notYetSoldQuery = [PFQuery queryWithClassName:kRLPhotoClass];
-            [notYetSoldQuery whereKey:kRLIsSoldKey notEqualTo:@"1"];
-            [soldOrSubQueries addObject:notYetSoldQuery];
-        }
-        
-        //Configure the Brand Filters
-        //For some reason, the order in which these sub queries are added to soldOrSubQueries matters???
-        //Unless I'm missing something, this seems like a huge Parse bug
-        NSMutableArray * brandSubQueries = [NSMutableArray new];
-        
-        NSMutableArray * brandSelectedFilters = [NSMutableArray new];
-        for (NSUInteger i = 0; i < [brandFilterToIsSelectedDict count]; i++) {
-            if ([[brandFilterToIsSelectedDictAllValues objectAtIndex:i] isEqual:@YES]) {
-                NSString * selectedBrand = (NSString *)[brandFilterToIsSelectedDict keyAtIndex:i];
-                [brandSelectedFilters addObject:selectedBrand];
-            }
-        }
-        
-        if ([brandSelectedFilters count]) {
-            PFQuery * selectedBrandQuery = [PFQuery queryWithClassName:kRLPhotoClass];
-            [selectedBrandQuery whereKey:kRLBrandKey containedIn:brandSelectedFilters];
-            [brandSubQueries addObject:selectedBrandQuery];
-        }
-        
+
         
         //Configure the Price Filters
         NSMutableArray * priceOrSubQueries = [NSMutableArray new];
@@ -589,23 +530,87 @@
                 [priceOrSubQueries addObject:selectedPriceRange];
             }
         }
+        //Configure the Sold Filters
+        //For some reason, the order in which these sub queries are added to soldOrSubQueries matters???
+        //Unless I'm missing something, this seems like a huge Parse bug
+        NSMutableArray * soldOrSubQueries = [NSMutableArray new];
         
-        PFQuery * sizeFilterSubQuery = [PFQuery orQueryWithSubqueries:sizeOrSubQueries];
-        PFQuery * soldFilterSubQuery = [PFQuery orQueryWithSubqueries:soldOrSubQueries];
+        if ([[soldFilterToIsSelectedDictAllValues objectAtIndex:0] isEqual:@YES]) {
+            PFQuery * alreadySoldQuery = [PFQuery queryWithClassName:kRLPhotoClass];
+            [alreadySoldQuery whereKey:kRLIsSoldKey equalTo:@"1"];
+            [soldOrSubQueries addObject:alreadySoldQuery];
+        }
+        
+        if ([[soldFilterToIsSelectedDictAllValues objectAtIndex:1] isEqual:@YES]) {
+            PFQuery * notYetSoldQuery = [PFQuery queryWithClassName:kRLPhotoClass];
+            [notYetSoldQuery whereKey:kRLIsSoldKey notEqualTo:@"1"];
+            [soldOrSubQueries addObject:notYetSoldQuery];
+        }
+        
+        //Configure the Size Filters
+        NSMutableArray * sizeOrSubQueries = [NSMutableArray new];
+        
+        if ([[sizeFilterToIsSelectedDictAllValues objectAtIndex:0] isEqual:@YES]) {
+            PFQuery * lessThan3Query = [PFQuery queryWithClassName:kRLPhotoClass];
+            [lessThan3Query whereKey:kRLSizeKey lessThan:@3];
+            [sizeOrSubQueries addObject:lessThan3Query];
+        }
+        
+        if ([[sizeFilterToIsSelectedDictAllValues objectAtIndex:[sizeFilterToIsSelectedDictAllValues count]-1] isEqual:@YES]) {
+            PFQuery * greaterThan17Query = [PFQuery queryWithClassName:kRLPhotoClass];
+            [greaterThan17Query whereKey:kRLSizeKey greaterThan:@17];
+            [sizeOrSubQueries addObject:greaterThan17Query];
+        }
+        
+        NSMutableArray * between3And17SelectedFilters = [NSMutableArray new];
+        for (NSUInteger i = 1; i < [sizeFilterToIsSelectedDictAllValues count] - 1; i++) {
+            if ([[sizeFilterToIsSelectedDictAllValues objectAtIndex:i] isEqual:@YES]) {
+                NSNumber * selectedSizeNumber = @([(NSString *)[sizeFilterToIsSelectedDict keyAtIndex:i] floatValue]);
+                [between3And17SelectedFilters addObject:selectedSizeNumber];
+            }
+        }
+        
+        if ([between3And17SelectedFilters count]) {
+            PFQuery * between3And17Query = [PFQuery queryWithClassName:kRLPhotoClass];
+            [between3And17Query whereKey:kRLSizeKey containedIn:between3And17SelectedFilters];
+            [sizeOrSubQueries addObject:between3And17Query];
+        }
+        
+        //Configure the Brand Filters
+        //For some reason, the order in which these sub queries are added to soldOrSubQueries matters???
+        //Unless I'm missing something, this seems like a huge Parse bug
+        NSMutableArray * brandSubQueries = [NSMutableArray new];
+        
+        NSMutableArray * brandSelectedFilters = [NSMutableArray new];
+        for (NSUInteger i = 0; i < [brandFilterToIsSelectedDict count]; i++) {
+            if ([[brandFilterToIsSelectedDictAllValues objectAtIndex:i] isEqual:@YES]) {
+                NSString * selectedBrand = (NSString *)[brandFilterToIsSelectedDict keyAtIndex:i];
+                [brandSelectedFilters addObject:selectedBrand];
+            }
+        }
+        
+        if ([brandSelectedFilters count]) {
+            PFQuery * selectedBrandQuery = [PFQuery queryWithClassName:kRLPhotoClass];
+            [selectedBrandQuery whereKey:kRLBrandKey containedIn:brandSelectedFilters];
+            [brandSubQueries addObject:selectedBrandQuery];
+        }
+
         PFQuery * priceFilterSubQuery = [PFQuery orQueryWithSubqueries:priceOrSubQueries];
+        PFQuery * soldFilterSubQuery = [PFQuery orQueryWithSubqueries:soldOrSubQueries];
         PFQuery * brandFilterSubQuery = [PFQuery orQueryWithSubqueries:brandSubQueries];
+        PFQuery * sizeFilterSubQuery = [PFQuery orQueryWithSubqueries:sizeOrSubQueries];
         
-        [sizeFilterSubQuery whereKey:kPAPPhotoLowerDescriptionKey containsString:searchKey];
-        [soldFilterSubQuery whereKey:kPAPPhotoLowerDescriptionKey containsString:searchKey];
         [priceFilterSubQuery whereKey:kPAPPhotoLowerDescriptionKey containsString:searchKey];
+        [soldFilterSubQuery whereKey:kPAPPhotoLowerDescriptionKey containsString:searchKey];
         [brandFilterSubQuery whereKey:kPAPPhotoLowerDescriptionKey containsString:searchKey];
+        [sizeFilterSubQuery whereKey:kPAPPhotoLowerDescriptionKey containsString:searchKey];
         
-        if ([sizeOrSubQueries count])
-            [workingQuery whereKey:kRLSizeKey matchesKey:kRLSizeKey inQuery:sizeFilterSubQuery];
-        if ([soldOrSubQueries count])
-            [workingQuery whereKey:kRLIsSoldKey matchesKey:kRLIsSoldKey inQuery:soldFilterSubQuery];
         if ([priceOrSubQueries count])
             [workingQuery whereKey:kRLPriceKey matchesKey:kRLPriceKey inQuery:priceFilterSubQuery];
+        if ([soldOrSubQueries count])
+            [workingQuery whereKey:kRLIsSoldKey matchesKey:kRLIsSoldKey inQuery:soldFilterSubQuery];
+        if ([sizeOrSubQueries count])
+            [workingQuery whereKey:kRLSizeKey matchesKey:kRLSizeKey inQuery:sizeFilterSubQuery];
         if ([brandSubQueries count])
             [workingQuery whereKey:kRLBrandKey matchesKey:kRLBrandKey inQuery:brandFilterSubQuery];
     }
@@ -618,10 +623,10 @@
 
 - (BOOL)filtersAreOn
 {
-    if ([[sizeFilterToIsSelectedDict allObjects] containsObject:@YES] ||
-        [[priceFilterToIsSelectedDict allObjects] containsObject:@YES] ||
+    if ([[priceFilterToIsSelectedDict allObjects] containsObject:@YES] ||
+        [[soldFilterToIsSelectedDict allObjects] containsObject:@YES] ||
         [[brandFilterToIsSelectedDict allObjects] containsObject:@YES] ||
-        [[soldFilterToIsSelectedDict allObjects] containsObject:@YES]) {
+        [[sizeFilterToIsSelectedDict allObjects] containsObject:@YES]) {
         return YES;
     }
     else return NO;

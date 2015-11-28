@@ -1,20 +1,22 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7DC3FC5BD42C3A1A35767663B981A90ED9087B56",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5A72D1A0E4A51DDBB866A38E3748C717155EF2A8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "45C53200-FA1D-4E3E-9537-34BFF6B04D13" : 0,
     "50919AD79AA969DA849F68A8A544749627B306C4" : 0,
     "7DC3FC5BD42C3A1A35767663B981A90ED9087B56" : 0,
     "C049D67E5AE7E1578E50A9CE60CF3CD20E581D7D" : 0,
-    "45C53200-FA1D-4E3E-9537-34BFF6B04D13" : 0
+    "5A72D1A0E4A51DDBB866A38E3748C717155EF2A8" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "880E7C2F-D8DA-4614-AFFF-6C94170F1169",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "45C53200-FA1D-4E3E-9537-34BFF6B04D13" : "Relaced copy 2",
     "50919AD79AA969DA849F68A8A544749627B306C4" : "Relaced%20copy%202",
     "7DC3FC5BD42C3A1A35767663B981A90ED9087B56" : "NowNear\/",
     "C049D67E5AE7E1578E50A9CE60CF3CD20E581D7D" : "Relaced-DevMaster",
-    "45C53200-FA1D-4E3E-9537-34BFF6B04D13" : "Relaced copy 2"
+    "5A72D1A0E4A51DDBB866A38E3748C717155EF2A8" : "NowNear2\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Relaced",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -29,6 +31,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zperrault\/Relaced.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "50919AD79AA969DA849F68A8A544749627B306C4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NowNear\/NowNear2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5A72D1A0E4A51DDBB866A38E3748C717155EF2A8"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NowNear\/NowNear.git",

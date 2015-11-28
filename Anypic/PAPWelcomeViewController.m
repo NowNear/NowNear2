@@ -68,11 +68,11 @@
     else if (sender.state == UIGestureRecognizerStateEnded) {
         if (sender.view == termsLabel) {
             termsLabel.textColor = [RLUtils nowNearTeal];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://getNowNear.com/legal/terms.html"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://nownear.xyz/terms.html"]];
         }
         else if (sender.view == privacyPolicyLabel) {
             privacyPolicyLabel.textColor = [RLUtils nowNearTeal];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://getNowNear.com/legal/policy.html"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://nownear.xyz/privacy.html"]];
         }
     }
 }

@@ -322,13 +322,13 @@
 {
     if (tableView.tag)
     {
-        if (filtersScope.selectedSegmentIndex == 0) //We're in the size filters sub menu
+        if (filtersScope.selectedSegmentIndex == 3) //We're in the size filters sub menu
             return [sizeFilterToIsSelectedDict count];
-        else if (filtersScope.selectedSegmentIndex == 1) //We're in the price filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 0) //We're in the price filters sub menu
             return [priceFilterToIsSelectedDict count];
-        else if (filtersScope.selectedSegmentIndex == 2) //We're in the sold filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 1) //We're in the sold filters sub menu
             return [soldFilterToIsSelectedDict count];
-        else if (filtersScope.selectedSegmentIndex == 3) //We're in the brand filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 2) //We're in the brand filters sub menu
             return [brandFilterToIsSelectedDict count];
     }
     
@@ -348,13 +348,13 @@
         }
         
         M13MutableOrderedDictionary * workingFiltersDict = nil;
-        if (filtersScope.selectedSegmentIndex == 0) //We're in the size filters sub menu
+        if (filtersScope.selectedSegmentIndex == 3) //We're in the size filters sub menu
             workingFiltersDict = sizeFilterToIsSelectedDict;
-        else if (filtersScope.selectedSegmentIndex == 1) //We're in the price filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 0) //We're in the price filters sub menu
             workingFiltersDict = priceFilterToIsSelectedDict;
-        else if (filtersScope.selectedSegmentIndex == 2) //We're in the sold filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 1) //We're in the sold filters sub menu
             workingFiltersDict = soldFilterToIsSelectedDict;
-        else if (filtersScope.selectedSegmentIndex == 3) //We're in the brand filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 2) //We're in the brand filters sub menu
             workingFiltersDict = brandFilterToIsSelectedDict;
         
         if ([[workingFiltersDict objectAtIndex:indexPath.row] isEqual:@YES]) {
@@ -387,13 +387,13 @@
 {
     if (tableView.tag) {
         M13MutableOrderedDictionary * workingFiltersDict = nil;
-        if (filtersScope.selectedSegmentIndex == 0) //We're in the size filters sub menu
+        if (filtersScope.selectedSegmentIndex == 3) //We're in the size filters sub menu
             workingFiltersDict = sizeFilterToIsSelectedDict;
-        else if (filtersScope.selectedSegmentIndex == 1) //We're in the price filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 0) //We're in the price filters sub menu
             workingFiltersDict = priceFilterToIsSelectedDict;
-        else if (filtersScope.selectedSegmentIndex == 2) //We're in the sold filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 1) //We're in the sold filters sub menu
             workingFiltersDict = soldFilterToIsSelectedDict;
-        else if (filtersScope.selectedSegmentIndex == 3) //We're in the brand filters sub menu
+        else if (filtersScope.selectedSegmentIndex == 2) //We're in the brand filters sub menu
             workingFiltersDict = brandFilterToIsSelectedDict;
         
         if ([[workingFiltersDict objectAtIndex:indexPath.row]  isEqual:@NO]) {

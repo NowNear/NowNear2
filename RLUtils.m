@@ -92,13 +92,17 @@ static PAPSettingsActionSheetDelegate * settingsActionSheetDelegate = nil;
 {
     return @[@"Less Than 3", @"3", @"4", @"5", @"6",  @"7",  @"8",  @"9", @"10"];
 }
-
+/*
 + (NSArray *)priceFiltersList
 {
     return @[@"Less Than $20", @"$20 - $30", @"$30 - $50", @"$50 - $75", @"$75 - $100", @"$100 - $150", @"$150 - $250", @"$250 - $400",
              @"$400 - $600", @"$600 - $1000", @"Over $1000"];
 }
-
+*/
++ (NSArray *)priceFiltersList
+{
+    return @[@"Less Than $20", @"$20 - $50", @"$50 - $100", @"$100 - $150", @"Over $150"];
+}
 + (NSArray *)soldFiltersList
 {
     return @[@"Already Sold", @"Still Available"];

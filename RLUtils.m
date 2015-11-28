@@ -10,7 +10,7 @@
 #import "PAPSettingsActionSheetDelegate.h"
 #import "PAPSettingsButtonItem.h"
 
-NSString * const kRLMerchantID = @"merchant.com.NowNear.NowNearapp";
+NSString * const kRLMerchantID = @"merchant.com.nearnow";
 
 NSString * const kRLBusinessName = @"NowNear";
 CGFloat const kRLShippingRate = 15.0f;

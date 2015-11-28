@@ -37,12 +37,14 @@ NSString * const parseClientKey = @"W66KrsD2PLNGNfS1sHUvZlWVnkVLktNLDb0UiL22";
 #else
 NSString * const parseApplicationId = @"uuASb6z5tcFCWHCAWwjwqNfpnDyuuaBw0ZAAQ58n"; // Production environment
 NSString * const parseClientKey = @"W66KrsD2PLNGNfS1sHUvZlWVnkVLktNLDb0UiL22";
+//NSString * const parseApplicationId = @"CL4C4BH0ijlrQ8g30ScE9rpygtCh4cLGNpUfASla"; // Production environment
+//NSString * const parseClientKey = @"8rpjkoQxxRFECLhGnl6T7Zcl8SEKNo0lnqhMdmlN";
 #endif
 
 #if DEBUG
-NSString * const stripePublishableKey = @"pk_test_OhiKIAbCwVnxez2tuREyMl7w"; // Test environment
+NSString * const stripePublishableKey = @"pk_test_c4DW9EL3wWbUmL5GA7P7fR8a"; // Test environment
 #else
-NSString * const stripePublishableKey = @"pk_live_ahrjp5lBL5gTIhpQKJpdqWdr"; // Production environment
+NSString * const stripePublishableKey = @"pk_live_OMCtb3Qwj1tWjks0lmFBxe7l"; // Production environment
 #endif
 
 @interface AppDelegate () {

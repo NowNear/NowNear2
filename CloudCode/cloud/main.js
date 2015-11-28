@@ -2,7 +2,7 @@
 var moment = require('cloud/libs/moment');
 
 // Parse App Id used to identify production environment
-var PRODUCTION_APP_ID = "syVaVI0Ny6iQzfySxvDzkxvfJTY9MfyxcadfoHiK";
+var PRODUCTION_APP_ID = "CL4C4BH0ijlrQ8g30ScE9rpygtCh4cLGNpUfASla";
 
 // Errors
 var UNAUTHENTICATED_USER_ERROR = "User must be authenticated";
@@ -298,11 +298,11 @@ Parse.Cloud.beforeSave('Credits', function(request, response) {
 */ 
 
 var Stripe = require('stripe');
-var stripeAPIKey = 'sk_test_zyRCOSdPFpmErs9ajcCXNOJQ';
+var stripeAPIKey = 'sk_test_KGtTwjHhKrox48yHHAV3kVbb';
 
 // Use production Stripe's key in production app
 if(Parse.applicationId === PRODUCTION_APP_ID) {
-    stripeAPIKey = 'sk_live_O8ZCXNhZjaVn2KljRMbkd8ZO';
+    stripeAPIKey = 'sk_live_NgjkOo717IlRmTcbSlSYJUL6';
 }
 
 Stripe.initialize(stripeAPIKey);
